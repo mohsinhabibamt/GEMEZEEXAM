@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemze exam</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gemze exam</h1>
+
+    <!-- JSON Upload -->
+    <div id="load-section">
+      <label for="json-upload">Upload JSON:</label>
+      <input type="file" id="json-upload" accept=".json">
+    </div>
+
+    <!-- Question Number Selection -->
+    <div id="config-section" style="display: block;">
+      <label for="num-questions">Number of Questions:</label>
+      <input type="number" id="num-questions" min="1" disabled>
+      <button id="start-exam" disabled>Start Exam</button>
+    </div>
+
+    <!-- Exam Section -->
+    <div id="exam-section" style="display: none;">
+      <div id="side-portal">
+        <div id="question-list"></div>
+      </div>
+      <div id="exam-content">
+        <div id="timer">Time Remaining: <span id="time-left"></span></div>
+        <h2>Question <span id="question-number"></span></h2>
+        <p id="question-text"></p>
+        <form id="options-form"></form>
+        <div class="exam-buttons">
+          <button id="show-portal" class="mobile-only">Show Questions</button>
+          <button id="flag-question">Flag</button>
+          <button id="next-question">Next</button>
+        </div>
+      </div>
+      <!-- Mobile Modal -->
+      <div id="portal-modal" class="modal">
+        <div class="modal-content">
+          <h3>Questions</h3>
+          <div id="modal-question-list"></div>
+          <button id="close-modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result-section" style="display: none;">
+      <h2>Exam Result</h2>
+      <p>Your Score: <span id="score"></span>%</p>
+      <div id="explanations"></div>
+      <button id="restart">Try Again</button>
+    </div>
+
+    <!-- Copyright Footer -->
+    <footer class="copyright">
+      <p>© 2025 Dream Tech. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
